@@ -1,0 +1,67 @@
+<!-- titre -->
+<h1 class="text-center text-primary my-5">Ajouter un nouveau utilisateur</h1>
+<form [formGroup]="addUsersForm">
+  <div class="form-row">
+    
+    
+
+    <!-- First Name -->
+    <div class="form-group col-md-6">
+      <input type="text" class="form-control" id="inputFirstName" placeholder="first Name" formControlName="firstName"
+      [ngClass]="{'is-invalid': submitted && addUsersForm.controls['firstName'].errors , 'is-valid': submitted &&!addUsersForm.controls['firstName'].errors}">
+      <div class="invalid-feedback d-block">
+        <div *ngIf="submitted && addUsersForm.controls['firstName'].hasError('required')">This filed is required!</div>
+        <div *ngIf="submitted && addUsersForm.controls['firstName'].hasError('minlength')">This filed must be > 4</div>
+      </div>
+    </div>
+
+    <!-- Last Name -->
+    <div class="form-group col-md-6">
+      <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" formControlName="lastName"
+      [ngClass]="{'is-invalid': submitted && addUsersForm.controls['lastName'].errors , 'is-valid': submitted &&!addUsersForm.controls['lastName'].errors}">
+      <div class="invalid-feedback d-block">
+        <div *ngIf="submitted && addUsersForm.controls['lastName'].hasError('required')">This filed is required!</div>
+        <div *ngIf="submitted && addUsersForm.controls['lastName'].hasError('minlength')">This filed must be > 3</div>
+    </div>
+  </div>
+  <!-- adresse mail -->
+  <div class="form-group">
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" formControlName="email" [ngClass]="{'is-invalid': submitted && addUsersForm.controls['email'].errors , 'is-valid': submitted && !addUsersForm.controls['email'].errors}">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+
+  <!-- passeword -->
+  <div class="form-group">
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="password" formControlName="password" [ngClass]="{'is-invalid': submitted && addUsersForm.controls['password'].errors , 'is-valid': submitted && !addUsersForm.controls['password'].errors}">
+  </div>
+<br>
+  <!-- Age -->
+  <div class="form-group col-md-12">
+    <input type="text" class="form-control" id="age" placeholder="age" formControlName="age"
+    [ngClass]="{'is-invalid': submitted && addUsersForm.controls['age'].errors , 'is-valid': submitted &&!addUsersForm.controls['age'].errors}">
+  </div>
+
+  <br>
+
+  <div class="form-group">
+    <input class="form-check-input" type="radio" name="customer" id="seller">
+    <label class="form-check-label" for="seller">
+      Seller
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="customer" id="buyer" checked>
+    <label class="form-check-label" for="buyer">
+      Buyer
+    </label>
+  </div>
+
+  <br>
+
+  <!-- button -->
+  <button type="submit" (click)="addUsers()" class="btn btn-primary btn-block">Add</button>
+  <br>
+
+  <!-- <a routerLink="/list-user" class="btn btn-danger btn-block"  role="button">Cancel</a> -->
+  </div>
+</form>

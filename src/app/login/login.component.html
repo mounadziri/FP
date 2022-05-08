@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="offset-3 col-6">
+      
+  <form [formGroup]="loginForm">
+  
+    <!-- titrel -->
+    <h1 class="text-center text-primary my-5">Se connecter</h1>
+  
+    <!-- adresse mail -->
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" formControlName="email" [ngClass]="{'is-invalid': submitted && loginForm.controls['email'].errors , 'is-valid': submitted && !loginForm.controls['email'].errors}">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+  
+    <!-- passeword -->
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="password" formControlName="password" [ngClass]="{'is-invalid': submitted && loginForm.controls['password'].errors , 'is-valid': submitted && !loginForm.controls['password'].errors}">
+    </div>
+  
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+  
+    <!-- button -->
+    <button type="button" (click)="login()" class="btn btn-primary btn-block" >Login</button>
+  <br>
+    <a routerLink="/register">Go to Register page </a>
+  </form>
+    </div>
+  </div>
+  
+  
