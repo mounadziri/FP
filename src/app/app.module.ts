@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddUsersComponent } from './add-users/add-users.component';
+import { ListUserComponent } from './list-user/list-user.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { AddUsersComponent } from './add-users/add-users.component';
     FooterComponent,
     NavbarComponent,
     AddUsersComponent,
+    ListUserComponent,
     
   ],
   imports: [
